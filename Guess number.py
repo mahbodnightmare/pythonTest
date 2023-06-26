@@ -1,6 +1,3 @@
-
-salam = 0
-
 import random 
 def guessNumber():
     number = int(random.randint(1,50))
