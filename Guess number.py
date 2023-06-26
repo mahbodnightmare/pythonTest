@@ -1,5 +1,5 @@
 
-
+salam = 0
 
 import random 
 def guessNumber():
