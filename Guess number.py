@@ -5,7 +5,7 @@ def guessNumber():
 
     decrement = 0
 
-    while userGuess == number or userGuess > number or userGuess < number:
+    while True:
         if userGuess == number:
             print("You guessed it right!")
             break
