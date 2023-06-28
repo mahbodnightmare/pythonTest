@@ -7,7 +7,7 @@ def palindrome(userWord):
         letter -= 1
         
     
-    if reversedText == userWord:
+    if reversedText.lower() == userWord.lower():
         print("The word is a palindrome")
     else:
         print("The word is not a palindrome")    
