@@ -7,9 +7,28 @@ nltk.download('words')
 # Get a list of English words from the nltk words corpus
 nltk_words = nltk.corpus.words.words()
 
-# Filter out non-lowercase words and select 12 random words
-random_words = random.sample([word.lower() for word in nltk_words], 12)
+used_words = set()
 
-print(random_words)
+while True:
+    # Filter out non-lowercase words and select 12 random words
+    available_words = [word.lower() for word in nltk_words if word.lower() not in used_words]
+    
+    if len(available_words) < 12:
+        print("Not enough unique words left. Restarting the list.")
+        used_words = set()
+        continue
+    
+    random_words = random.sample(available_words, 12)
 
-user_input = input("Do you more words? (y/n): ")
+    print("Random words:", random_words)
+
+    # Add the newly generated words to the used_words set
+    used_words.update(random_words)
+
+    # Ask the user if they want more words
+    user_input = input("Do you want more words? (yes/no): ").strip().lower()
+
+    if user_input == 'no':
+        break
+    elif user_input != 'no' and user_input != "yes":
+        input("Please write a correct answer (yes/no): ").strip().lower()
