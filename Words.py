@@ -20,8 +20,8 @@ while True:
     
     random_words = random.sample(available_words, 12)
 
-    # Join the words into a single string separated by spaces
-    word_string = ' '.join(random_words)
+    # Join the words into a single string separated by commas
+    word_string = ', '.join(random_words)
 
     print("Random words:", word_string)
 
