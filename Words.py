@@ -28,7 +28,9 @@ while True:
     # Ask the user if they want more words
     user_input = input("Do you want more words? (yes/no): ").strip().lower()
 
+    while user_input not in ['yes', 'no']:
+        user_input = input("Please write a correct answer (yes/no): ").strip().lower()
+
     if user_input == 'no':
+        print("Ok!")
         break
-    elif user_input != 'no' and user_input != "yes":
-        input("Please write a correct answer (yes/no): ").strip().lower()
