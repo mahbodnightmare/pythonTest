@@ -20,7 +20,10 @@ while True:
     
     random_words = random.sample(available_words, 12)
 
-    print("Random words:", random_words)
+    # Join the words into a single string separated by spaces
+    word_string = ' '.join(random_words)
+
+    print("Random words:", word_string)
 
     # Add the newly generated words to the used_words set
     used_words.update(random_words)
